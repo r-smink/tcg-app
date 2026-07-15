@@ -1,0 +1,5 @@
+com.rick.tcgscanner.test.app-androidTest-0 A:\WorkSpace\tcg-app\app\build\generated\res\resValues\androidTest\debug
+com.rick.tcgscanner.test.app-updated_navigation_xml-1 A:\WorkSpace\tcg-app\app\build\generated\updated_navigation_xml\debugAndroidTest
+com.rick.tcgscanner.test.app-mergeDebugAndroidTestResources-2 A:\WorkSpace\tcg-app\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.rick.tcgscanner.test.app-mergeDebugAndroidTestResources-3 A:\WorkSpace\tcg-app\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.rick.tcgscanner.test.app-debugAndroidTest-4 A:\WorkSpace\tcg-app\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
