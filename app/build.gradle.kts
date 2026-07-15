@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 val localProperties = Properties()
@@ -12,6 +13,9 @@ if (localFile.exists()) {
     localProperties.load(localFile.inputStream())
 }
 val kimiApiKey: String = localProperties.getProperty("KIMI_API_KEY") ?: ""
+val pokemonApiKey: String = localProperties.getProperty("POKEMON_TCG_API_KEY") ?: ""
+val pokemonApiHost: String = localProperties.getProperty("POKEMON_TCG_API_HOST") ?: "pokemon-tcg-api.p.rapidapi.com"
+val pokemonApiBaseUrl: String = localProperties.getProperty("POKEMON_TCG_API_BASE_URL") ?: "https://pokemon-tcg-api.p.rapidapi.com/"
 
 android {
     namespace = "com.rick.tcgscanner"
@@ -25,6 +29,9 @@ android {
         versionName = "1.0"
 
         buildConfigField("String", "KIMI_API_KEY", "\"$kimiApiKey\"")
+        buildConfigField("String", "POKEMON_TCG_API_KEY", "\"$pokemonApiKey\"")
+        buildConfigField("String", "POKEMON_TCG_API_HOST", "\"$pokemonApiHost\"")
+        buildConfigField("String", "POKEMON_TCG_API_BASE_URL", "\"$pokemonApiBaseUrl\"")
     }
 
     buildTypes {
@@ -51,10 +58,6 @@ android {
         compose = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.14"
-    }
-
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -63,25 +66,25 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.2")
-    implementation("androidx.activity:activity-compose:1.9.0")
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+    implementation("androidx.activity:activity-compose:1.9.3")
 
-    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+    implementation(platform("androidx.compose:compose-bom:2024.11.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.2")
-    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+    implementation("androidx.navigation:navigation-compose:2.8.4")
 
     // CameraX
-    implementation("androidx.camera:camera-core:1.3.4")
-    implementation("androidx.camera:camera-camera2:1.3.4")
-    implementation("androidx.camera:camera-lifecycle:1.3.4")
-    implementation("androidx.camera:camera-view:1.3.4")
+    implementation("androidx.camera:camera-core:1.4.0")
+    implementation("androidx.camera:camera-camera2:1.4.0")
+    implementation("androidx.camera:camera-lifecycle:1.4.0")
+    implementation("androidx.camera:camera-view:1.4.0")
 
     // Room
     implementation("androidx.room:room-runtime:2.6.1")
@@ -94,7 +97,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     // Images
-    implementation("io.coil-kt:coil-compose:2.6.0")
+    implementation("io.coil-kt:coil-compose:2.7.0")
 
     // Preferences
     implementation("androidx.datastore:datastore-preferences:1.1.1")
