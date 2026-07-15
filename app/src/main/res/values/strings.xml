@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TCG Scanner</string>
+    <string name="scan">Scan</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="capture">Capture</string>
+    <string name="camera_permission_required">Camera permission is required to scan cards.</string>
+    <string name="grant_permission">Grant permission</string>
+    <string name="identifying_card">Identifying card…</string>
+    <string name="no_cards_found">No matching cards found.</string>
+    <string name="add_to_portfolio">Add to portfolio</string>
+    <string name="quantity">Quantity</string>
+    <string name="condition">Condition</string>
+    <string name="purchase_price">Purchase price</string>
+    <string name="notes">Notes</string>
+    <string name="total_value">Total value</string>
+    <string name="total_cards">Total cards</string>
+    <string name="unique_cards">Unique cards</string>
+    <string name="price_ungraded">Ungraded</string>
+    <string name="price_psa9">PSA 9</string>
+    <string name="price_psa10">PSA 10</string>
+    <string name="price_cgc95">CGC 9.5</string>
+    <string name="price_cgc10">CGC 10</string>
+    <string name="price_bgs95">BGS 9.5</string>
+</resources>
